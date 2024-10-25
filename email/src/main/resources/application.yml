@@ -1,0 +1,51 @@
+spring:
+    application:
+        name: email
+    datasource:
+        url: jdbc:postgresql://localhost:5432/ms-email
+        username: postgres
+        password: 123
+    jpa:
+        hibernate:
+            ddl-auto: update  # 'none' in production
+        show-sql: true
+    rabbitmq:
+        addresses: ${CLOUDAMPQ_URL}
+        queue:
+            email: default.email
+
+# Configuracao GMAIl
+    mail:
+        host: smtp.gmail.com
+        port: 587
+        username: ${EMAIL_FROM}
+        password: ${GOOGLE_PASS}
+        properties:
+            mail:
+                smtp:
+                    auth: true
+                    starttls.enable: true
+server:
+    port: 8082
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

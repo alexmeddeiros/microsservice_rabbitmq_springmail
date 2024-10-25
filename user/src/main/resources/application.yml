@@ -1,0 +1,17 @@
+spring:
+    application:
+        name: user
+    datasource:
+        url: jdbc:postgresql://localhost:5432/ms-user
+        username: postgres
+        password: 123
+    jpa:
+        hibernate:
+            ddl-auto: update  # 'none' in production
+        show-sql: true
+    rabbitmq:
+        addresses: ${CLOUDAMPQ_URL}
+        queue:
+            email: default.email
+server:
+    port: 8084
